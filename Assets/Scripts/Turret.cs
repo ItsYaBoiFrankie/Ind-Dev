@@ -20,6 +20,9 @@ public class Turret : MonoBehaviour {
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
 
     void Start()
     {
@@ -80,7 +83,15 @@ public class Turret : MonoBehaviour {
 
     void Shoot()
     {
-        Debug.Log("SHOOT");
+        //Grabs the bullet script so that we can pass target coords to it
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+        //Makes sure its not null, so we can pass the coords to the bullet script
+        if (bullet != null)
+        {
+            bullet.Seek(target);
+        }
     }
 
     //Only displays the range of the turret if the turret is selected
