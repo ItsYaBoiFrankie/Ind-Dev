@@ -10,8 +10,8 @@ public class Shop : MonoBehaviour {
     }
     public void PurchaseStandardTurret ()
     {
-        Debug.Log("Standard Turret built");
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+        Debug.Log("Crusader Selected");
+        buildManager.SetTurretToBuild(buildManager.Crusader);
     }
 
     public void PurchasedAnotherTurret()

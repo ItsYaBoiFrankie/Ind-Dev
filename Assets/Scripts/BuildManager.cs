@@ -16,7 +16,7 @@ public class BuildManager : MonoBehaviour {
     }
 
     //Where different turret types go
-    public GameObject standardTurretPrefab;
+    public GameObject Crusader;
   
 
     public GameObject BuildTurret ()
